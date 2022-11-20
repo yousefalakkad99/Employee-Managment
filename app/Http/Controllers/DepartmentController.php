@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Department;
 use App\Http\Requests\DepartmentRequest;
-
+use App\Http\Requests\DepartmentUpdateRequest;
 class DepartmentController extends Controller
 {
 
