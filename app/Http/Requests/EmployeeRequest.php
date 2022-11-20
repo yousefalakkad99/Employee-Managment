@@ -19,7 +19,7 @@ class EmployeeRequest extends FormRequest
         'dept_code_id'=>'required',
         'grade'=>'required',
         'appointment'=>'required',
-        'Identification_Number'=>'required|numeric|unique:employees,Identification_Number,'.$this->id,
+        'Identification_Number'=>'required|numeric|unique:employees,Identification_Number',
         'promotion'=>'required',
         'Academic_qualification'=>'required',
         'courses',
