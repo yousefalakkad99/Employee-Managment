@@ -8,7 +8,7 @@ use App\Models\Employee;
 use App\Http\Requests\EmployeeRequest;
 use App\Http\Requests\EmployeeUpdateRequest;
 use App\Models\Department;
-use App\Trait\imageTrait;
+use App\Trait\ImageTrait;
 use Illuminate\Support\Arr;
 use Hash;
 use App\Models\attachments;
@@ -20,7 +20,7 @@ use Carbon\Carbon;
 
 class EmployeeController extends Controller
 {
-    use imageTrait;
+    use ImageTrait;
     function __construct()
     {
         $this->middleware('auth');
