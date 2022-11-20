@@ -13,7 +13,7 @@ class DepartmentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,8 @@ class DepartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'department_code'=>'required|max:100|unique:department,department_code,'.$this->department_id,
-            'department_name'=>'required|max:100|unique:department,department_name,'.$this->department_id,
+            'department_code'=>'required|max:100|unique:department,department_code,',
+            'department_name'=>'required|max:100|unique:department,department_name,',
         ];
     }
 
