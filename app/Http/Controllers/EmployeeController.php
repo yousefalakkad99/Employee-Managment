@@ -54,30 +54,33 @@ class EmployeeController extends Controller
             ->with('i', ($request->input('page', 1) - 1) * 5);
         }
         else
-         $employee = Employee::with('department','vacations')->orderBy('id','ASC')->paginate(5);
-        foreach($employee as $e)
         {
-            if($e->vacations == NULL)
+            $employee = Employee::orderBy('id','ASC')->paginate(5);
+            foreach($employee as $e)
             {
-               continue;
-            }
-            if($e->vacations->Evac > $e->vacations->Svac && Carbon::today()->toDateString() >= $e->vacations->Svac  )
-            {
-                $e->status='اجازة';
-                $e->save();
-            }
-           else if($e->vacations->Evac > $e->vacations->Svac)
-            {
-                $e->status='في العمل';
-                $e->save();
-            }
-            else
-            {
-                $vacations=Vacation::find($e->vacations->id);
-                $vacations->delete();
-                $e->status='في العمل';
-                $e->save();
-            }
+                if($e->vacations == NULL)
+                {
+                   continue;
+                }
+                if($e->vacations->Evac > $e->vacations->Svac && Carbon::today()->toDateString() >= $e->vacations->Svac  )
+                {
+                    $e->status='اجازة';
+                    $e->save();
+                }
+               else if($e->vacations->Evac > $e->vacations->Svac)
+                {
+                    $e->status='في العمل';
+                    $e->save();
+                }
+                else
+                {
+                    $vacations=Vacation::find($e->vacations->id);
+                    $vacations->delete();
+                    $e->status='في العمل';
+                    $e->save();
+                }
+
+        }
 
 
         }
