@@ -215,7 +215,7 @@ class EmployeeController extends Controller
     public function Print($id)
     {
         $employee = Employee::where('id', $id)->first();
-        return view('employee.Print',compact('employee'));
+        return view('employee.print',compact('employee'));
     }
 
     public function attachmint_add(Request $request,$id)

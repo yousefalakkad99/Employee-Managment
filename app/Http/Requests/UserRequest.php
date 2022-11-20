@@ -24,10 +24,10 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-        'username'=>'regex:/^\S*$/u|required|unique:users,username,'.$this->id,
+        'username'=>'regex:/^\S*$/u|required|unique:users,username',
         'password'=>'required|min:8',
         'image'=>'required|image',
-        'email'=>'required|email|max:255|unique:users,email,'.$this->id,
+        'email'=>'required|email|max:255|unique:users,email',
         'roles_name'=>'required',
 
         ];

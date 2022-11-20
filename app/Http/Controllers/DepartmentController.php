@@ -68,7 +68,7 @@ public function create()
 
     }
 
-    public function update(DepartmentRequest $request,$department_id)
+    public function update(DepartmentUpdateRequest $request,$department_id)
     {
 
       $department=Department::find($department_id);

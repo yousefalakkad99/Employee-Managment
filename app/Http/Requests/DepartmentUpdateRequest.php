@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DepartmentRequest extends FormRequest
+class DepartmentUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class DepartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'department_code'=>'required|max:100|unique:department,department_code',
-            'department_name'=>'required|max:100|unique:department,department_name',
+            'department_code'=>'required|max:100|unique:department,department_code,'.$this->department_id,
+            'department_name'=>'required|max:100|unique:department,department_name,'.$this->department_id,
         ];
     }
 
