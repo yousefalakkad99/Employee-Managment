@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Department;
 use App\Http\Requests\DepartmentRequest;
+use Illuminate\Support\Facades\Validator;
 
 class DepartmentController extends Controller
 {
@@ -43,8 +44,14 @@ public function create()
 
     }
 
-    public function store(DepartmentRequest $request)
+    public function store(Request $request)
     {
+        Validator::make($request, [
+            'department_code'=>'required|max:100|unique:department,department_code,',
+            'department_name'=>'required|max:100|unique:department,department_name,',
+        ],
+        );
+
        //INSERT DATA
        Department::create([
         'department_name'=>$request->department_name,

@@ -22,7 +22,7 @@ Route::group(['middleware'=>'auth:web','namespace'=>'App\Http\Controllers'],func
 /************************************************************************************ */
 /*                      BEGIN DASHBOARD ROUTE                                       */
 /********************************************************************************** */
-    Route::get('index','DashboardController@get_dashboard')->name('dashboard');
+    Route::get('/','DashboardController@get_dashboard')->name('dashboard');
     Route::post('logout','DashboardController@logout')->name('logout');
 /************************************************************************************ */
 /*                      END DASHBOARD ROUTE                                       */
