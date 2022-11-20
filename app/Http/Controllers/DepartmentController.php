@@ -47,8 +47,13 @@ public function create()
     public function store(Request $request)
     {
         Validator::make($request, [
-            'department_code'=>['required|max:100|unique:department,department_code,'],
-            'department_name'=>['required|max:100|unique:department,department_name,'],
+            'department_code'=>[
+                'required',
+                'max:100',
+                'unique:department,department_code'],
+            'department_name'=>['required',
+            'max:100',
+            'unique:department,department_name'],
         ]);
 
        //INSERT DATA
