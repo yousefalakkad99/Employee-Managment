@@ -8,14 +8,14 @@ use Spatie\Permission\Traits\HasRoles;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserUpdateRequest;
 
-use App\Trait\imageTrait;
+use App\Trait\ImageTrait;
 use Illuminate\Support\Arr;
 use Hash;
 use DB;
 class UserController extends Controller
 {
 
-    use imageTrait;
+    use ImageTrait;
     use HasRoles;
 /**
 
