@@ -43,7 +43,7 @@ public function create()
 
     }
 
-    public function store(Request $request)
+    public function store(DepartmentRequest $request)
     {
        //INSERT DATA
        Department::create([
