@@ -33,7 +33,7 @@ Route::group(['middleware'=>'auth:web','namespace'=>'App\Http\Controllers'],func
 Route::group(['prefix'=>'department'],function(){
     Route::get('/','DepartmentController@get_all_department')->name('departmint');
     Route::get('create','DepartmentController@create')->name('department.create');
-    Route::post('store','DepartmentController@store')->name('department.store');
+    Route::post('store/dept','DepartmentController@store')->name('department.store');
     Route::get('edit/{department_id}','DepartmentController@edit')->name('edit.departmint');
     Route::post('update/{department_id}','DepartmentController@update')->name('update.department');
     Route::get('delete/{department_id}','DepartmentController@delete')->name('delete.department');});
