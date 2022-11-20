@@ -121,7 +121,7 @@ class EmployeeController extends Controller
       public function show($id,Request $request)
       {
 
-        $employee=Employee::with('department','vacations')->find($id);
+        $employee=Employee::find($id);
         $attachmint=attachments::with('employess')->where('employee_id',$id)->get();
         if($employee)
         {
