@@ -46,10 +46,14 @@ public function create()
     public function store(DepartmentRequest $request)
     {
        //INSERT DATA
-       Department::create([
-        'department_name'=>$request->department_name,
-        'department_code'=>$request->department_code,
-       ]);
+    //    Department::create([
+    //     'department_name'=>$request->department_name,
+    //     'department_code'=>$request->department_code,
+    //    ]);
+       $department= new Department();
+       $department->department_name=$request->department_name;
+       $department->department_code=$request->department_code;
+       $department->save();
        return redirect()->route('departmint')->with(['success'=>'تمت اضافة القسم بنجاح']);
 
     }
