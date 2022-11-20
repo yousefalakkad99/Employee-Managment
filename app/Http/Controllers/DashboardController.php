@@ -20,7 +20,7 @@ class DashboardController extends Controller
     }
     public function get_dashboard()
     {
-        $employees = Employee::with('department','vacations')->orderBy('id','ASC')->get();
+        $employees = Employee::orderBy('id','ASC')->get();
         foreach($employees as $e)
         {
             if($e->vacations == NULL)
