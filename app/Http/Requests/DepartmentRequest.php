@@ -24,8 +24,8 @@ class DepartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'department_code'=>'required|max:100|unique:department,department_code,',
-            'department_name'=>'required|max:100|unique:department,department_name,',
+            'department_code'=>'required|max:100|unique',
+            'department_name'=>'required|max:100|unique',
         ];
     }
 
