@@ -46,7 +46,7 @@ class EmployeeController extends Controller
         $search_text = $request->input('query');
         if($search_text != "")
         {
-        $employee = Employee::with('department','vacations')->whereHas('department', function ($q) use($search_text){
+        $employee = Employee::whereHas('department', function ($q) use($search_text){
             $q->where('department_code', 'like', "%$search_text%");
         })->orwhere('full_name', 'like', "%$search_text%")->orderBy('id','ASC')->paginate(5);
 
